@@ -1,0 +1,26 @@
+{
+  "sds2App": {
+    "laboratoires": {
+      "home": {
+        "title": "Laboratoires",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Laboratoires",
+        "createOrEditLabel": "Create or edit a Laboratoires",
+        "notFound": "No Laboratoires found"
+      },
+      "created": "A new Laboratoires is created with identifier {{ param }}",
+      "updated": "A Laboratoires is updated with identifier {{ param }}",
+      "deleted": "A Laboratoires is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Laboratoires {{ id }}?"
+      },
+      "detail": {
+        "title": "Laboratoires"
+      },
+      "id": "ID",
+      "nomLaboratoire": "Nom Laboratoire",
+      "observationsExamens": "Observations Examens",
+      "faireExam": "Faire Exam"
+    }
+  }
+}

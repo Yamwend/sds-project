@@ -1,0 +1,26 @@
+{
+  "sds2App": {
+    "familleMaladies": {
+      "home": {
+        "title": "FamilleMaladies",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Famille Maladies",
+        "createOrEditLabel": "Créer ou éditer un Famille Maladies",
+        "notFound": "Aucun Famille Maladies trouvé"
+      },
+      "created": "Un nouveau Famille Maladies a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Famille Maladies avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Famille Maladies avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Famille Maladies {{ id }} ?"
+      },
+      "detail": {
+        "title": "Famille Maladies"
+      },
+      "id": "ID",
+      "libelleFMaladie": "Libelle F Maladie",
+      "descriptionFMaladie": "Description F Maladie",
+      "maladie": "Maladie"
+    }
+  }
+}

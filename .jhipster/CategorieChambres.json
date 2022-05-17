@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100524",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "categorie_chambres",
+  "fields": [
+    {
+      "fieldName": "libelleCategory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descriptionChambre",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CategorieChambres",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "chambres",
+      "otherEntityRelationshipName": "categorie",
+      "relationshipName": "chambre",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

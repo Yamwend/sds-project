@@ -1,0 +1,26 @@
+{
+  "sds2App": {
+    "ligneOrdonnances": {
+      "home": {
+        "title": "Ligne Ordonnances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ligne Ordonnances",
+        "createOrEditLabel": "Create or edit a Ligne Ordonnances",
+        "notFound": "No Ligne Ordonnances found"
+      },
+      "created": "A new Ligne Ordonnances is created with identifier {{ param }}",
+      "updated": "A Ligne Ordonnances is updated with identifier {{ param }}",
+      "deleted": "A Ligne Ordonnances is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ligne Ordonnances {{ id }}?"
+      },
+      "detail": {
+        "title": "Ligne Ordonnances"
+      },
+      "id": "ID",
+      "medicament": "Medicament",
+      "posologie": "Posologie",
+      "ordonnance": "Ordonnance"
+    }
+  }
+}

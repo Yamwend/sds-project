@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100518",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "services",
+  "fields": [
+    {
+      "fieldName": "libelleService",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Services",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "personnelSoignants",
+      "otherEntityRelationshipName": "service",
+      "relationshipName": "service",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

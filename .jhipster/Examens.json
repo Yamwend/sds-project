@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100520",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "examens",
+  "fields": [
+    {
+      "fieldName": "nomExamen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeExamen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateExamen",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Examens",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "consultations",
+      "otherEntityRelationshipName": "examen",
+      "relationshipName": "demander",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "libelleType",
+      "otherEntityName": "typeExams",
+      "otherEntityRelationshipName": "type",
+      "relationshipName": "typeExam",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nomLaboratoire",
+      "otherEntityName": "laboratoires",
+      "otherEntityRelationshipName": "faireExam",
+      "relationshipName": "laboratoire",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

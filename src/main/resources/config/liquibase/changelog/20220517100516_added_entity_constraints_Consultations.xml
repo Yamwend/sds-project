@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Consultations.
+    -->
+    <changeSet id="20220517100516-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="patient_id"
+                                 baseTableName="consultations"
+                                 constraintName="fk_consultations__patient_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="patients"/>
+
+        <addForeignKeyConstraint baseColumnNames="personnel_id"
+                                 baseTableName="consultations"
+                                 constraintName="fk_consultations__personnel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="personnel_soignants"/>
+
+        <addForeignKeyConstraint baseColumnNames="examen_id"
+                                 baseTableName="consultations"
+                                 constraintName="fk_consultations__examen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="examens"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,26 @@
+{
+  "sds2App": {
+    "ordonnances": {
+      "home": {
+        "title": "Ordonnances",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Ordonnances",
+        "createOrEditLabel": "Créer ou éditer un Ordonnances",
+        "notFound": "Aucun Ordonnances trouvé"
+      },
+      "created": "Un nouveau Ordonnances a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Ordonnances avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Ordonnances avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Ordonnances {{ id }} ?"
+      },
+      "detail": {
+        "title": "Ordonnances"
+      },
+      "id": "ID",
+      "numero": "Numero",
+      "ligne": "Ligne",
+      "ordonner": "Ordonner"
+    }
+  }
+}

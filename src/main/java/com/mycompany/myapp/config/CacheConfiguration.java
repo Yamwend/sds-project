@@ -48,6 +48,36 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.Patients.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Patients.class.getName() + ".traitements");
+            createCache(cm, com.mycompany.myapp.domain.Patients.class.getName() + ".hospitalisations");
+            createCache(cm, com.mycompany.myapp.domain.Patients.class.getName() + ".consultations");
+            createCache(cm, com.mycompany.myapp.domain.Traitements.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Maladies.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Maladies.class.getName() + ".traiters");
+            createCache(cm, com.mycompany.myapp.domain.Ordonnances.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Ordonnances.class.getName() + ".lignes");
+            createCache(cm, com.mycompany.myapp.domain.Ordonnances.class.getName() + ".ordonners");
+            createCache(cm, com.mycompany.myapp.domain.LigneOrdonnances.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.FamilleMaladies.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.FamilleMaladies.class.getName() + ".maladies");
+            createCache(cm, com.mycompany.myapp.domain.Consultations.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PersonnelSoignants.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PersonnelSoignants.class.getName() + ".proposers");
+            createCache(cm, com.mycompany.myapp.domain.PersonnelSoignants.class.getName() + ".consulters");
+            createCache(cm, com.mycompany.myapp.domain.Services.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Services.class.getName() + ".services");
+            createCache(cm, com.mycompany.myapp.domain.Laboratoires.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Laboratoires.class.getName() + ".faireExams");
+            createCache(cm, com.mycompany.myapp.domain.Examens.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Examens.class.getName() + ".demanders");
+            createCache(cm, com.mycompany.myapp.domain.TypeExams.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TypeExams.class.getName() + ".types");
+            createCache(cm, com.mycompany.myapp.domain.Hospitalisations.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Chambres.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Chambres.class.getName() + ".hospitalisers");
+            createCache(cm, com.mycompany.myapp.domain.CategorieChambres.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CategorieChambres.class.getName() + ".chambres");
             // jhipster-needle-ehcache-add-entry
         };
     }

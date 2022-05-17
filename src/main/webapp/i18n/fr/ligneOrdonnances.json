@@ -1,0 +1,26 @@
+{
+  "sds2App": {
+    "ligneOrdonnances": {
+      "home": {
+        "title": "LigneOrdonnances",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Ligne Ordonnances",
+        "createOrEditLabel": "Créer ou éditer un Ligne Ordonnances",
+        "notFound": "Aucun Ligne Ordonnances trouvé"
+      },
+      "created": "Un nouveau Ligne Ordonnances a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Ligne Ordonnances avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Ligne Ordonnances avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Ligne Ordonnances {{ id }} ?"
+      },
+      "detail": {
+        "title": "Ligne Ordonnances"
+      },
+      "id": "ID",
+      "medicament": "Medicament",
+      "posologie": "Posologie",
+      "ordonnance": "Ordonnance"
+    }
+  }
+}

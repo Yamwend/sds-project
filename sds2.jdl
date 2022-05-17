@@ -1,0 +1,131 @@
+entity Patients {
+	codePat String,
+    nomPat String,
+    prenomPat String,
+    sexePat Sexe,
+    adressePat String,
+    telephonePat String,
+    emailPat String,
+    originePat String,
+    professionPat String,
+    agePat ZonedDateTime
+}
+
+enum Sexe {
+	MASCULIN, FEMININ, AUTRES
+}
+
+entity Traitements {
+    observationsTraitement String,
+    debutTraitement ZonedDateTime,
+    finTraitement ZonedDateTime,
+    etatFinPatient String
+}
+
+entity Maladies {
+	nomMaladie String,
+    familleMaladie String,
+    descriptionMaladie String
+}
+
+entity Ordonnances {
+	numero String
+}
+
+entity LigneOrdonnances {
+	medicament String,
+    posologie String
+}
+
+entity FamilleMaladies {
+	libelleFMaladie String,
+    descriptionFMaladie String
+}
+
+entity Consultations {
+    typeConsultation TypeConsultation,
+    observationsConsltation String,
+    fraisConsultion Integer,
+    dateConsultion ZonedDateTime
+}
+
+enum TypeConsultation {
+	CPN, CPON, CPS, CURATIVE, BILAN
+}
+
+entity PersonnelSoignants {
+	codePersonne String,
+    nomPersonne String,
+    prenomPersonne String,
+    gradePersonne Grade,
+    fonctionPersonne String,
+    telphonePersonne String,
+    emailPersonne Sexe,
+    adressePersonne String,
+    dateDeNaissPersonne ZonedDateTime
+}
+
+enum Grade {
+	INFIRMIER, GENERALISTE, SPECIALISTE
+}
+
+
+entity Services {
+    libelleService String
+}
+
+entity Laboratoires {
+	nomLaboratoire String,
+    observationsExamens String
+}
+
+entity Examens {
+    nomExamen String,
+    typeExamen String,
+    dateExamen ZonedDateTime
+}
+
+entity TypeExams {
+	libelleType String,
+    descruptionType String
+}
+
+entity Hospitalisations {
+    dateArrivee ZonedDateTime,
+    dateSortie ZonedDateTime,
+    observationsHospitalisation String,
+}
+
+entity Chambres {
+	numeroChambre String,
+  	localisationChambre String,
+  	nombrebLit Integer,
+  	prixChambre BigDecimal,
+}
+
+entity CategorieChambres {
+	libelleCategory String,
+    descriptionChambre String,
+}
+
+relationship OneToMany {
+	CategorieChambres{chambre} to Chambres{categorie(libelleCategory)},
+    FamilleMaladies{maladie} to Maladies{famille(libelleFMaladie)},
+    Chambres{hospitaliser} to Hospitalisations{chambre(numeroChambre)}
+	Ordonnances{ligne} to LigneOrdonnances{ordonnance}, 
+    Patients{traitement} to Traitements{patient(codePat)},
+    Patients{hospitalisation} to Hospitalisations{patient(codePat)},
+    Services{service} to PersonnelSoignants{service(libelleService)},
+    TypeExams{type} to Examens{typeExam(libelleType)},
+    Patients{consultation} to Consultations{patient(codePat)},
+    //Patients{examen} to Examens{patient(codePat)},
+    Laboratoires{FaireExam} to Examens{laboratoire(nomLaboratoire)},
+    Maladies{traiter} to Traitements{maladie(nomMaladie)}
+    Ordonnances{ordonner} to Traitements{ordonnance(numero)}
+    PersonnelSoignants{proposer} to Traitements{personnel(codePersonne)}
+    PersonnelSoignants{consulter} to Consultations{personnel(codePersonne)}
+    Examens{demander} to Consultations{examen(nomExamen)}
+}
+
+
+

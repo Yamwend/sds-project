@@ -1,0 +1,36 @@
+{
+  "sds2App": {
+    "patients": {
+      "home": {
+        "title": "Patients",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Patients",
+        "createOrEditLabel": "Créer ou éditer un Patients",
+        "notFound": "Aucun Patients trouvé"
+      },
+      "created": "Un nouveau Patients a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Patients avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Patients avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Patients {{ id }} ?"
+      },
+      "detail": {
+        "title": "Patients"
+      },
+      "id": "ID",
+      "codePat": "Code Pat",
+      "nomPat": "Nom Pat",
+      "prenomPat": "Prenom Pat",
+      "sexePat": "Sexe Pat",
+      "adressePat": "Adresse Pat",
+      "telephonePat": "Telephone Pat",
+      "emailPat": "Email Pat",
+      "originePat": "Origine Pat",
+      "professionPat": "Profession Pat",
+      "agePat": "Age Pat",
+      "traitement": "Traitement",
+      "hospitalisation": "Hospitalisation",
+      "consultation": "Consultation"
+    }
+  }
+}

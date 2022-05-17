@@ -1,0 +1,29 @@
+{
+  "sds2App": {
+    "examens": {
+      "home": {
+        "title": "Examens",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Examens",
+        "createOrEditLabel": "Create or edit a Examens",
+        "notFound": "No Examens found"
+      },
+      "created": "A new Examens is created with identifier {{ param }}",
+      "updated": "A Examens is updated with identifier {{ param }}",
+      "deleted": "A Examens is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Examens {{ id }}?"
+      },
+      "detail": {
+        "title": "Examens"
+      },
+      "id": "ID",
+      "nomExamen": "Nom Examen",
+      "typeExamen": "Type Examen",
+      "dateExamen": "Date Examen",
+      "demander": "Demander",
+      "typeExam": "Type Exam",
+      "laboratoire": "Laboratoire"
+    }
+  }
+}

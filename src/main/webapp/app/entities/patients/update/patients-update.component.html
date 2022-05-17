@@ -1,0 +1,125 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-patients-heading" data-cy="PatientsCreateUpdateHeading" jhiTranslate="sds2App.patients.home.createOrEditLabel">
+        Create or edit a Patients
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.codePat" for="field_codePat">Code Pat</label>
+          <input type="text" class="form-control" name="codePat" id="field_codePat" data-cy="codePat" formControlName="codePat" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.nomPat" for="field_nomPat">Nom Pat</label>
+          <input type="text" class="form-control" name="nomPat" id="field_nomPat" data-cy="nomPat" formControlName="nomPat" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.prenomPat" for="field_prenomPat">Prenom Pat</label>
+          <input type="text" class="form-control" name="prenomPat" id="field_prenomPat" data-cy="prenomPat" formControlName="prenomPat" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.sexePat" for="field_sexePat">Sexe Pat</label>
+          <select class="form-control" name="sexePat" formControlName="sexePat" id="field_sexePat" data-cy="sexePat">
+            <option [ngValue]="null">{{ 'sds2App.Sexe.null' | translate }}</option>
+            <option *ngFor="let sexe of sexeValues" [value]="sexe">{{ 'sds2App.Sexe.' + sexe | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.adressePat" for="field_adressePat">Adresse Pat</label>
+          <input
+            type="text"
+            class="form-control"
+            name="adressePat"
+            id="field_adressePat"
+            data-cy="adressePat"
+            formControlName="adressePat"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.telephonePat" for="field_telephonePat">Telephone Pat</label>
+          <input
+            type="text"
+            class="form-control"
+            name="telephonePat"
+            id="field_telephonePat"
+            data-cy="telephonePat"
+            formControlName="telephonePat"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.emailPat" for="field_emailPat">Email Pat</label>
+          <input type="text" class="form-control" name="emailPat" id="field_emailPat" data-cy="emailPat" formControlName="emailPat" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.originePat" for="field_originePat">Origine Pat</label>
+          <input
+            type="text"
+            class="form-control"
+            name="originePat"
+            id="field_originePat"
+            data-cy="originePat"
+            formControlName="originePat"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.professionPat" for="field_professionPat">Profession Pat</label>
+          <input
+            type="text"
+            class="form-control"
+            name="professionPat"
+            id="field_professionPat"
+            data-cy="professionPat"
+            formControlName="professionPat"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.patients.agePat" for="field_agePat">Age Pat</label>
+          <div class="d-flex">
+            <input
+              id="field_agePat"
+              data-cy="agePat"
+              type="datetime-local"
+              class="form-control"
+              name="agePat"
+              formControlName="agePat"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

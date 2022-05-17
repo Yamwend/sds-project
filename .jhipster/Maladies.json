@@ -1,0 +1,42 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100512",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "maladies",
+  "fields": [
+    {
+      "fieldName": "nomMaladie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "familleMaladie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descriptionMaladie",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Maladies",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "traitements",
+      "otherEntityRelationshipName": "maladie",
+      "relationshipName": "traiter",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "libelleFMaladie",
+      "otherEntityName": "familleMaladies",
+      "otherEntityRelationshipName": "maladie",
+      "relationshipName": "famille",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

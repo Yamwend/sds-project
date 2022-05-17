@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100519",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "laboratoires",
+  "fields": [
+    {
+      "fieldName": "nomLaboratoire",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "observationsExamens",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Laboratoires",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "examens",
+      "otherEntityRelationshipName": "laboratoire",
+      "relationshipName": "faireExam",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

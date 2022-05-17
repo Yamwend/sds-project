@@ -1,0 +1,29 @@
+{
+  "sds2App": {
+    "examens": {
+      "home": {
+        "title": "Examens",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Examens",
+        "createOrEditLabel": "Créer ou éditer un Examens",
+        "notFound": "Aucun Examens trouvé"
+      },
+      "created": "Un nouveau Examens a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Examens avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Examens avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Examens {{ id }} ?"
+      },
+      "detail": {
+        "title": "Examens"
+      },
+      "id": "ID",
+      "nomExamen": "Nom Examen",
+      "typeExamen": "Type Examen",
+      "dateExamen": "Date Examen",
+      "demander": "Demander",
+      "typeExam": "Type Exam",
+      "laboratoire": "Laboratoire"
+    }
+  }
+}

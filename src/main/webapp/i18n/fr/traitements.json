@@ -1,0 +1,31 @@
+{
+  "sds2App": {
+    "traitements": {
+      "home": {
+        "title": "Traitements",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Traitements",
+        "createOrEditLabel": "Créer ou éditer un Traitements",
+        "notFound": "Aucun Traitements trouvé"
+      },
+      "created": "Un nouveau Traitements a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Traitements avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Traitements avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Traitements {{ id }} ?"
+      },
+      "detail": {
+        "title": "Traitements"
+      },
+      "id": "ID",
+      "observationsTraitement": "Observations Traitement",
+      "debutTraitement": "Debut Traitement",
+      "finTraitement": "Fin Traitement",
+      "etatFinPatient": "Etat Fin Patient",
+      "patient": "Patient",
+      "maladie": "Maladie",
+      "ordonnance": "Ordonnance",
+      "personnel": "Personnel"
+    }
+  }
+}

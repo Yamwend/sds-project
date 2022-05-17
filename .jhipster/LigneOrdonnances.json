@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100514",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "ligne_ordonnances",
+  "fields": [
+    {
+      "fieldName": "medicament",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "posologie",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LigneOrdonnances",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ordonnances",
+      "otherEntityRelationshipName": "ligne",
+      "relationshipName": "ordonnance",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

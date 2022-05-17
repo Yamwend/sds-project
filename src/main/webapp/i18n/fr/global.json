@@ -7,6 +7,21 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "patients": "Patients",
+        "traitements": "Traitements",
+        "maladies": "Maladies",
+        "ordonnances": "Ordonnances",
+        "ligneOrdonnances": "Ligne Ordonnances",
+        "familleMaladies": "Famille Maladies",
+        "consultations": "Consultations",
+        "personnelSoignants": "Personnel Soignants",
+        "services": "Services",
+        "laboratoires": "Laboratoires",
+        "examens": "Examens",
+        "typeExams": "Type Exams",
+        "hospitalisations": "Hospitalisations",
+        "chambres": "Chambres",
+        "categorieChambres": "Categorie Chambres",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

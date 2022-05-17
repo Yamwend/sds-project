@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100522",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "hospitalisations",
+  "fields": [
+    {
+      "fieldName": "dateArrivee",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "dateSortie",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "observationsHospitalisation",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Hospitalisations",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "numeroChambre",
+      "otherEntityName": "chambres",
+      "otherEntityRelationshipName": "hospitaliser",
+      "relationshipName": "chambre",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codePat",
+      "otherEntityName": "patients",
+      "otherEntityRelationshipName": "hospitalisation",
+      "relationshipName": "patient",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

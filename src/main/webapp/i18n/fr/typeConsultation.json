@@ -1,0 +1,12 @@
+{
+  "sds2App": {
+    "TypeConsultation": {
+      "null": "",
+      "CPN": "CPN",
+      "CPON": "CPON",
+      "CPS": "CPS",
+      "CURATIVE": "CURATIVE",
+      "BILAN": "BILAN"
+    }
+  }
+}

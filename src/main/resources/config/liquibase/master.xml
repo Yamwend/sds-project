@@ -15,7 +15,30 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100510_added_entity_Patients.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100511_added_entity_Traitements.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100512_added_entity_Maladies.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100513_added_entity_Ordonnances.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100514_added_entity_LigneOrdonnances.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100515_added_entity_FamilleMaladies.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100516_added_entity_Consultations.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100517_added_entity_PersonnelSoignants.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100518_added_entity_Services.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100519_added_entity_Laboratoires.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100520_added_entity_Examens.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100521_added_entity_TypeExams.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100522_added_entity_Hospitalisations.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100523_added_entity_Chambres.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100524_added_entity_CategorieChambres.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20220517100511_added_entity_constraints_Traitements.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100512_added_entity_constraints_Maladies.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100514_added_entity_constraints_LigneOrdonnances.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100516_added_entity_constraints_Consultations.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100517_added_entity_constraints_PersonnelSoignants.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100520_added_entity_constraints_Examens.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100522_added_entity_constraints_Hospitalisations.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220517100523_added_entity_constraints_Chambres.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

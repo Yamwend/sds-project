@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100523",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "chambres",
+  "fields": [
+    {
+      "fieldName": "numeroChambre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "localisationChambre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombrebLit",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "prixChambre",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Chambres",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hospitalisations",
+      "otherEntityRelationshipName": "chambre",
+      "relationshipName": "hospitaliser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "libelleCategory",
+      "otherEntityName": "categorieChambres",
+      "otherEntityRelationshipName": "chambre",
+      "relationshipName": "categorie",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

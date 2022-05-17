@@ -1,0 +1,30 @@
+{
+  "sds2App": {
+    "consultations": {
+      "home": {
+        "title": "Consultations",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Consultations",
+        "createOrEditLabel": "Créer ou éditer un Consultations",
+        "notFound": "Aucun Consultations trouvé"
+      },
+      "created": "Un nouveau Consultations a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Consultations avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Consultations avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Consultations {{ id }} ?"
+      },
+      "detail": {
+        "title": "Consultations"
+      },
+      "id": "ID",
+      "typeConsultation": "Type Consultation",
+      "observationsConsltation": "Observations Consltation",
+      "fraisConsultion": "Frais Consultion",
+      "dateConsultion": "Date Consultion",
+      "patient": "Patient",
+      "personnel": "Personnel",
+      "examen": "Examen"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+<div>
+  <h2 id="page-heading" data-cy="PatientsHeading">
+    <span jhiTranslate="sds2App.patients.home.title">Patients</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="sds2App.patients.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-patients"
+        [routerLink]="['/patients/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="sds2App.patients.home.createLabel"> Create a new Patients </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="patients?.length === 0">
+    <span jhiTranslate="sds2App.patients.home.notFound">No patients found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="patients && patients.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.codePat">Code Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.nomPat">Nom Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.prenomPat">Prenom Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.sexePat">Sexe Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.adressePat">Adresse Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.telephonePat">Telephone Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.emailPat">Email Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.originePat">Origine Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.professionPat">Profession Pat</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.patients.agePat">Age Pat</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patients of patients; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/patients', patients.id, 'view']">{{ patients.id }}</a>
+          </td>
+          <td>{{ patients.codePat }}</td>
+          <td>{{ patients.nomPat }}</td>
+          <td>{{ patients.prenomPat }}</td>
+          <td jhiTranslate="{{ 'sds2App.Sexe.' + patients.sexePat }}">{{ patients.sexePat }}</td>
+          <td>{{ patients.adressePat }}</td>
+          <td>{{ patients.telephonePat }}</td>
+          <td>{{ patients.emailPat }}</td>
+          <td>{{ patients.originePat }}</td>
+          <td>{{ patients.professionPat }}</td>
+          <td>{{ patients.agePat | formatMediumDatetime }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/patients', patients.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/patients', patients.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(patients)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

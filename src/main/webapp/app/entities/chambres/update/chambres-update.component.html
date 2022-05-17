@@ -1,0 +1,101 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-chambres-heading" data-cy="ChambresCreateUpdateHeading" jhiTranslate="sds2App.chambres.home.createOrEditLabel">
+        Create or edit a Chambres
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.chambres.numeroChambre" for="field_numeroChambre">Numero Chambre</label>
+          <input
+            type="text"
+            class="form-control"
+            name="numeroChambre"
+            id="field_numeroChambre"
+            data-cy="numeroChambre"
+            formControlName="numeroChambre"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.chambres.localisationChambre" for="field_localisationChambre"
+            >Localisation Chambre</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="localisationChambre"
+            id="field_localisationChambre"
+            data-cy="localisationChambre"
+            formControlName="localisationChambre"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.chambres.nombrebLit" for="field_nombrebLit">Nombreb Lit</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nombrebLit"
+            id="field_nombrebLit"
+            data-cy="nombrebLit"
+            formControlName="nombrebLit"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.chambres.prixChambre" for="field_prixChambre">Prix Chambre</label>
+          <input
+            type="number"
+            class="form-control"
+            name="prixChambre"
+            id="field_prixChambre"
+            data-cy="prixChambre"
+            formControlName="prixChambre"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.chambres.categorie" for="field_categorie">Categorie</label>
+          <select class="form-control" id="field_categorie" data-cy="categorie" name="categorie" formControlName="categorie">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                categorieChambresOption.id === editForm.get('categorie')!.value?.id
+                  ? editForm.get('categorie')!.value
+                  : categorieChambresOption
+              "
+              *ngFor="let categorieChambresOption of categorieChambresSharedCollection; trackBy: trackCategorieChambresById"
+            >
+              {{ categorieChambresOption.libelleCategory }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

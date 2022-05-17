@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100516",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "consultations",
+  "fields": [
+    {
+      "fieldName": "typeConsultation",
+      "fieldType": "TypeConsultation",
+      "fieldValues": "CPN,CPON,CPS,CURATIVE,BILAN"
+    },
+    {
+      "fieldName": "observationsConsltation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fraisConsultion",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dateConsultion",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Consultations",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "codePat",
+      "otherEntityName": "patients",
+      "otherEntityRelationshipName": "consultation",
+      "relationshipName": "patient",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codePersonne",
+      "otherEntityName": "personnelSoignants",
+      "otherEntityRelationshipName": "consulter",
+      "relationshipName": "personnel",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nomExamen",
+      "otherEntityName": "examens",
+      "otherEntityRelationshipName": "demander",
+      "relationshipName": "examen",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

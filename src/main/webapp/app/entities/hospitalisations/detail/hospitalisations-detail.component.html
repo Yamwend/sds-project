@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="hospitalisations">
+      <h2 data-cy="hospitalisationsDetailsHeading"><span jhiTranslate="sds2App.hospitalisations.detail.title">Hospitalisations</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ hospitalisations.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.hospitalisations.dateArrivee">Date Arrivee</span></dt>
+        <dd>
+          <span>{{ hospitalisations.dateArrivee | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.hospitalisations.dateSortie">Date Sortie</span></dt>
+        <dd>
+          <span>{{ hospitalisations.dateSortie | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.hospitalisations.observationsHospitalisation">Observations Hospitalisation</span></dt>
+        <dd>
+          <span>{{ hospitalisations.observationsHospitalisation }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.hospitalisations.chambre">Chambre</span></dt>
+        <dd>
+          <div *ngIf="hospitalisations.chambre">
+            <a [routerLink]="['/chambres', hospitalisations.chambre?.id, 'view']">{{ hospitalisations.chambre?.numeroChambre }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="sds2App.hospitalisations.patient">Patient</span></dt>
+        <dd>
+          <div *ngIf="hospitalisations.patient">
+            <a [routerLink]="['/patients', hospitalisations.patient?.id, 'view']">{{ hospitalisations.patient?.codePat }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/hospitalisations', hospitalisations.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

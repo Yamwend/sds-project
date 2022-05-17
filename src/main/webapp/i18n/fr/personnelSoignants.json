@@ -1,0 +1,35 @@
+{
+  "sds2App": {
+    "personnelSoignants": {
+      "home": {
+        "title": "PersonnelSoignants",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Personnel Soignants",
+        "createOrEditLabel": "Créer ou éditer un Personnel Soignants",
+        "notFound": "Aucun Personnel Soignants trouvé"
+      },
+      "created": "Un nouveau Personnel Soignants a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Personnel Soignants avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Personnel Soignants avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Personnel Soignants {{ id }} ?"
+      },
+      "detail": {
+        "title": "Personnel Soignants"
+      },
+      "id": "ID",
+      "codePersonne": "Code Personne",
+      "nomPersonne": "Nom Personne",
+      "prenomPersonne": "Prenom Personne",
+      "gradePersonne": "Grade Personne",
+      "fonctionPersonne": "Fonction Personne",
+      "telphonePersonne": "Telphone Personne",
+      "emailPersonne": "Email Personne",
+      "adressePersonne": "Adresse Personne",
+      "dateDeNaissPersonne": "Date De Naiss Personne",
+      "proposer": "Proposer",
+      "consulter": "Consulter",
+      "service": "Service"
+    }
+  }
+}

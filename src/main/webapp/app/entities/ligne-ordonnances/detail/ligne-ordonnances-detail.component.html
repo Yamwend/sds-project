@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ligneOrdonnances">
+      <h2 data-cy="ligneOrdonnancesDetailsHeading"><span jhiTranslate="sds2App.ligneOrdonnances.detail.title">Ligne Ordonnances</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ligneOrdonnances.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.ligneOrdonnances.medicament">Medicament</span></dt>
+        <dd>
+          <span>{{ ligneOrdonnances.medicament }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.ligneOrdonnances.posologie">Posologie</span></dt>
+        <dd>
+          <span>{{ ligneOrdonnances.posologie }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.ligneOrdonnances.ordonnance">Ordonnance</span></dt>
+        <dd>
+          <div *ngIf="ligneOrdonnances.ordonnance">
+            <a [routerLink]="['/ordonnances', ligneOrdonnances.ordonnance?.id, 'view']">{{ ligneOrdonnances.ordonnance?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ligne-ordonnances', ligneOrdonnances.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

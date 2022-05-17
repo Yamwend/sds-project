@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100521",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "type_exams",
+  "fields": [
+    {
+      "fieldName": "libelleType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descruptionType",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TypeExams",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "examens",
+      "otherEntityRelationshipName": "typeExam",
+      "relationshipName": "type",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

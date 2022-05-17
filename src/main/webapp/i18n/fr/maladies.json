@@ -1,0 +1,28 @@
+{
+  "sds2App": {
+    "maladies": {
+      "home": {
+        "title": "Maladies",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Maladies",
+        "createOrEditLabel": "Créer ou éditer un Maladies",
+        "notFound": "Aucun Maladies trouvé"
+      },
+      "created": "Un nouveau Maladies a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Maladies avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Maladies avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Maladies {{ id }} ?"
+      },
+      "detail": {
+        "title": "Maladies"
+      },
+      "id": "ID",
+      "nomMaladie": "Nom Maladie",
+      "familleMaladie": "Famille Maladie",
+      "descriptionMaladie": "Description Maladie",
+      "traiter": "Traiter",
+      "famille": "Famille"
+    }
+  }
+}

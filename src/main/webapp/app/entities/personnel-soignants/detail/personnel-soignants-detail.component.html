@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personnelSoignants">
+      <h2 data-cy="personnelSoignantsDetailsHeading">
+        <span jhiTranslate="sds2App.personnelSoignants.detail.title">Personnel Soignants</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.codePersonne">Code Personne</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.codePersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.nomPersonne">Nom Personne</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.nomPersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.prenomPersonne">Prenom Personne</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.prenomPersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.gradePersonne">Grade Personne</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'sds2App.Grade.' + personnelSoignants.gradePersonne }}">{{ personnelSoignants.gradePersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.fonctionPersonne">Fonction Personne</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.fonctionPersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.telphonePersonne">Telphone Personne</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.telphonePersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.emailPersonne">Email Personne</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'sds2App.Sexe.' + personnelSoignants.emailPersonne }}">{{ personnelSoignants.emailPersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.adressePersonne">Adresse Personne</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.adressePersonne }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.dateDeNaissPersonne">Date De Naiss Personne</span></dt>
+        <dd>
+          <span>{{ personnelSoignants.dateDeNaissPersonne | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.personnelSoignants.service">Service</span></dt>
+        <dd>
+          <div *ngIf="personnelSoignants.service">
+            <a [routerLink]="['/services', personnelSoignants.service?.id, 'view']">{{ personnelSoignants.service?.libelleService }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/personnel-soignants', personnelSoignants.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "sds2App": {
+    "chambres": {
+      "home": {
+        "title": "Chambres",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Chambres",
+        "createOrEditLabel": "Créer ou éditer un Chambres",
+        "notFound": "Aucun Chambres trouvé"
+      },
+      "created": "Un nouveau Chambres a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Chambres avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Chambres avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Chambres {{ id }} ?"
+      },
+      "detail": {
+        "title": "Chambres"
+      },
+      "id": "ID",
+      "numeroChambre": "Numero Chambre",
+      "localisationChambre": "Localisation Chambre",
+      "nombrebLit": "Nombreb Lit",
+      "prixChambre": "Prix Chambre",
+      "hospitaliser": "Hospitaliser",
+      "categorie": "Categorie"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100517",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "personnel_soignants",
+  "fields": [
+    {
+      "fieldName": "codePersonne",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomPersonne",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenomPersonne",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gradePersonne",
+      "fieldType": "Grade",
+      "fieldValues": "INFIRMIER,GENERALISTE,SPECIALISTE"
+    },
+    {
+      "fieldName": "fonctionPersonne",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telphonePersonne",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailPersonne",
+      "fieldType": "Sexe",
+      "fieldValues": "MASCULIN,FEMININ,AUTRES"
+    },
+    {
+      "fieldName": "adressePersonne",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateDeNaissPersonne",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PersonnelSoignants",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "traitements",
+      "otherEntityRelationshipName": "personnel",
+      "relationshipName": "proposer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "consultations",
+      "otherEntityRelationshipName": "personnel",
+      "relationshipName": "consulter",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "libelleService",
+      "otherEntityName": "services",
+      "otherEntityRelationshipName": "service",
+      "relationshipName": "service",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

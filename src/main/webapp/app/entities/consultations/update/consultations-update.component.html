@@ -1,0 +1,142 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-consultations-heading"
+        data-cy="ConsultationsCreateUpdateHeading"
+        jhiTranslate="sds2App.consultations.home.createOrEditLabel"
+      >
+        Create or edit a Consultations
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.consultations.typeConsultation" for="field_typeConsultation"
+            >Type Consultation</label
+          >
+          <select
+            class="form-control"
+            name="typeConsultation"
+            formControlName="typeConsultation"
+            id="field_typeConsultation"
+            data-cy="typeConsultation"
+          >
+            <option [ngValue]="null">{{ 'sds2App.TypeConsultation.null' | translate }}</option>
+            <option *ngFor="let typeConsultation of typeConsultationValues" [value]="typeConsultation">
+              {{ 'sds2App.TypeConsultation.' + typeConsultation | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.consultations.observationsConsltation" for="field_observationsConsltation"
+            >Observations Consltation</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="observationsConsltation"
+            id="field_observationsConsltation"
+            data-cy="observationsConsltation"
+            formControlName="observationsConsltation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.consultations.fraisConsultion" for="field_fraisConsultion"
+            >Frais Consultion</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="fraisConsultion"
+            id="field_fraisConsultion"
+            data-cy="fraisConsultion"
+            formControlName="fraisConsultion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.consultations.dateConsultion" for="field_dateConsultion">Date Consultion</label>
+          <div class="d-flex">
+            <input
+              id="field_dateConsultion"
+              data-cy="dateConsultion"
+              type="datetime-local"
+              class="form-control"
+              name="dateConsultion"
+              formControlName="dateConsultion"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.consultations.patient" for="field_patient">Patient</label>
+          <select class="form-control" id="field_patient" data-cy="patient" name="patient" formControlName="patient">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="patientsOption.id === editForm.get('patient')!.value?.id ? editForm.get('patient')!.value : patientsOption"
+              *ngFor="let patientsOption of patientsSharedCollection; trackBy: trackPatientsById"
+            >
+              {{ patientsOption.codePat }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.consultations.personnel" for="field_personnel">Personnel</label>
+          <select class="form-control" id="field_personnel" data-cy="personnel" name="personnel" formControlName="personnel">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                personnelSoignantsOption.id === editForm.get('personnel')!.value?.id
+                  ? editForm.get('personnel')!.value
+                  : personnelSoignantsOption
+              "
+              *ngFor="let personnelSoignantsOption of personnelSoignantsSharedCollection; trackBy: trackPersonnelSoignantsById"
+            >
+              {{ personnelSoignantsOption.codePersonne }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.consultations.examen" for="field_examen">Examen</label>
+          <select class="form-control" id="field_examen" data-cy="examen" name="examen" formControlName="examen">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="examensOption.id === editForm.get('examen')!.value?.id ? editForm.get('examen')!.value : examensOption"
+              *ngFor="let examensOption of examensSharedCollection; trackBy: trackExamensById"
+            >
+              {{ examensOption.nomExamen }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

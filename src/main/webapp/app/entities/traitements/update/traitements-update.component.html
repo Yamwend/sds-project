@@ -1,0 +1,148 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-traitements-heading" data-cy="TraitementsCreateUpdateHeading" jhiTranslate="sds2App.traitements.home.createOrEditLabel">
+        Create or edit a Traitements
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.observationsTraitement" for="field_observationsTraitement"
+            >Observations Traitement</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="observationsTraitement"
+            id="field_observationsTraitement"
+            data-cy="observationsTraitement"
+            formControlName="observationsTraitement"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.debutTraitement" for="field_debutTraitement">Debut Traitement</label>
+          <div class="d-flex">
+            <input
+              id="field_debutTraitement"
+              data-cy="debutTraitement"
+              type="datetime-local"
+              class="form-control"
+              name="debutTraitement"
+              formControlName="debutTraitement"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.finTraitement" for="field_finTraitement">Fin Traitement</label>
+          <div class="d-flex">
+            <input
+              id="field_finTraitement"
+              data-cy="finTraitement"
+              type="datetime-local"
+              class="form-control"
+              name="finTraitement"
+              formControlName="finTraitement"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.etatFinPatient" for="field_etatFinPatient">Etat Fin Patient</label>
+          <input
+            type="text"
+            class="form-control"
+            name="etatFinPatient"
+            id="field_etatFinPatient"
+            data-cy="etatFinPatient"
+            formControlName="etatFinPatient"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.patient" for="field_patient">Patient</label>
+          <select class="form-control" id="field_patient" data-cy="patient" name="patient" formControlName="patient">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="patientsOption.id === editForm.get('patient')!.value?.id ? editForm.get('patient')!.value : patientsOption"
+              *ngFor="let patientsOption of patientsSharedCollection; trackBy: trackPatientsById"
+            >
+              {{ patientsOption.codePat }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.maladie" for="field_maladie">Maladie</label>
+          <select class="form-control" id="field_maladie" data-cy="maladie" name="maladie" formControlName="maladie">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="maladiesOption.id === editForm.get('maladie')!.value?.id ? editForm.get('maladie')!.value : maladiesOption"
+              *ngFor="let maladiesOption of maladiesSharedCollection; trackBy: trackMaladiesById"
+            >
+              {{ maladiesOption.nomMaladie }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.ordonnance" for="field_ordonnance">Ordonnance</label>
+          <select class="form-control" id="field_ordonnance" data-cy="ordonnance" name="ordonnance" formControlName="ordonnance">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                ordonnancesOption.id === editForm.get('ordonnance')!.value?.id ? editForm.get('ordonnance')!.value : ordonnancesOption
+              "
+              *ngFor="let ordonnancesOption of ordonnancesSharedCollection; trackBy: trackOrdonnancesById"
+            >
+              {{ ordonnancesOption.numero }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.traitements.personnel" for="field_personnel">Personnel</label>
+          <select class="form-control" id="field_personnel" data-cy="personnel" name="personnel" formControlName="personnel">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                personnelSoignantsOption.id === editForm.get('personnel')!.value?.id
+                  ? editForm.get('personnel')!.value
+                  : personnelSoignantsOption
+              "
+              *ngFor="let personnelSoignantsOption of personnelSoignantsSharedCollection; trackBy: trackPersonnelSoignantsById"
+            >
+              {{ personnelSoignantsOption.codePersonne }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

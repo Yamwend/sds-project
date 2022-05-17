@@ -1,0 +1,61 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100511",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "traitements",
+  "fields": [
+    {
+      "fieldName": "observationsTraitement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "debutTraitement",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "finTraitement",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "etatFinPatient",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Traitements",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "codePat",
+      "otherEntityName": "patients",
+      "otherEntityRelationshipName": "traitement",
+      "relationshipName": "patient",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nomMaladie",
+      "otherEntityName": "maladies",
+      "otherEntityRelationshipName": "traiter",
+      "relationshipName": "maladie",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "numero",
+      "otherEntityName": "ordonnances",
+      "otherEntityRelationshipName": "ordonner",
+      "relationshipName": "ordonnance",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codePersonne",
+      "otherEntityName": "personnelSoignants",
+      "otherEntityRelationshipName": "proposer",
+      "relationshipName": "personnel",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

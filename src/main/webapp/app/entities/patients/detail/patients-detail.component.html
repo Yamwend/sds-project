@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="patients">
+      <h2 data-cy="patientsDetailsHeading"><span jhiTranslate="sds2App.patients.detail.title">Patients</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ patients.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.codePat">Code Pat</span></dt>
+        <dd>
+          <span>{{ patients.codePat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.nomPat">Nom Pat</span></dt>
+        <dd>
+          <span>{{ patients.nomPat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.prenomPat">Prenom Pat</span></dt>
+        <dd>
+          <span>{{ patients.prenomPat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.sexePat">Sexe Pat</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'sds2App.Sexe.' + patients.sexePat }}">{{ patients.sexePat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.adressePat">Adresse Pat</span></dt>
+        <dd>
+          <span>{{ patients.adressePat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.telephonePat">Telephone Pat</span></dt>
+        <dd>
+          <span>{{ patients.telephonePat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.emailPat">Email Pat</span></dt>
+        <dd>
+          <span>{{ patients.emailPat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.originePat">Origine Pat</span></dt>
+        <dd>
+          <span>{{ patients.originePat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.professionPat">Profession Pat</span></dt>
+        <dd>
+          <span>{{ patients.professionPat }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.patients.agePat">Age Pat</span></dt>
+        <dd>
+          <span>{{ patients.agePat | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/patients', patients.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

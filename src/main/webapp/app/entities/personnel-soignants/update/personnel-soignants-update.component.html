@@ -1,0 +1,176 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-personnel-soignants-heading"
+        data-cy="PersonnelSoignantsCreateUpdateHeading"
+        jhiTranslate="sds2App.personnelSoignants.home.createOrEditLabel"
+      >
+        Create or edit a Personnel Soignants
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.codePersonne" for="field_codePersonne">Code Personne</label>
+          <input
+            type="text"
+            class="form-control"
+            name="codePersonne"
+            id="field_codePersonne"
+            data-cy="codePersonne"
+            formControlName="codePersonne"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.nomPersonne" for="field_nomPersonne">Nom Personne</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nomPersonne"
+            id="field_nomPersonne"
+            data-cy="nomPersonne"
+            formControlName="nomPersonne"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.prenomPersonne" for="field_prenomPersonne"
+            >Prenom Personne</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="prenomPersonne"
+            id="field_prenomPersonne"
+            data-cy="prenomPersonne"
+            formControlName="prenomPersonne"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.gradePersonne" for="field_gradePersonne">Grade Personne</label>
+          <select
+            class="form-control"
+            name="gradePersonne"
+            formControlName="gradePersonne"
+            id="field_gradePersonne"
+            data-cy="gradePersonne"
+          >
+            <option [ngValue]="null">{{ 'sds2App.Grade.null' | translate }}</option>
+            <option *ngFor="let grade of gradeValues" [value]="grade">{{ 'sds2App.Grade.' + grade | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.fonctionPersonne" for="field_fonctionPersonne"
+            >Fonction Personne</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="fonctionPersonne"
+            id="field_fonctionPersonne"
+            data-cy="fonctionPersonne"
+            formControlName="fonctionPersonne"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.telphonePersonne" for="field_telphonePersonne"
+            >Telphone Personne</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="telphonePersonne"
+            id="field_telphonePersonne"
+            data-cy="telphonePersonne"
+            formControlName="telphonePersonne"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.emailPersonne" for="field_emailPersonne">Email Personne</label>
+          <select
+            class="form-control"
+            name="emailPersonne"
+            formControlName="emailPersonne"
+            id="field_emailPersonne"
+            data-cy="emailPersonne"
+          >
+            <option [ngValue]="null">{{ 'sds2App.Sexe.null' | translate }}</option>
+            <option *ngFor="let sexe of sexeValues" [value]="sexe">{{ 'sds2App.Sexe.' + sexe | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.adressePersonne" for="field_adressePersonne"
+            >Adresse Personne</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="adressePersonne"
+            id="field_adressePersonne"
+            data-cy="adressePersonne"
+            formControlName="adressePersonne"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.dateDeNaissPersonne" for="field_dateDeNaissPersonne"
+            >Date De Naiss Personne</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_dateDeNaissPersonne"
+              data-cy="dateDeNaissPersonne"
+              type="datetime-local"
+              class="form-control"
+              name="dateDeNaissPersonne"
+              formControlName="dateDeNaissPersonne"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.personnelSoignants.service" for="field_service">Service</label>
+          <select class="form-control" id="field_service" data-cy="service" name="service" formControlName="service">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="servicesOption.id === editForm.get('service')!.value?.id ? editForm.get('service')!.value : servicesOption"
+              *ngFor="let servicesOption of servicesSharedCollection; trackBy: trackServicesById"
+            >
+              {{ servicesOption.libelleService }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

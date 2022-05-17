@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-ligne-ordonnances-heading"
+        data-cy="LigneOrdonnancesCreateUpdateHeading"
+        jhiTranslate="sds2App.ligneOrdonnances.home.createOrEditLabel"
+      >
+        Create or edit a Ligne Ordonnances
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.ligneOrdonnances.medicament" for="field_medicament">Medicament</label>
+          <input
+            type="text"
+            class="form-control"
+            name="medicament"
+            id="field_medicament"
+            data-cy="medicament"
+            formControlName="medicament"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.ligneOrdonnances.posologie" for="field_posologie">Posologie</label>
+          <input type="text" class="form-control" name="posologie" id="field_posologie" data-cy="posologie" formControlName="posologie" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.ligneOrdonnances.ordonnance" for="field_ordonnance">Ordonnance</label>
+          <select class="form-control" id="field_ordonnance" data-cy="ordonnance" name="ordonnance" formControlName="ordonnance">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                ordonnancesOption.id === editForm.get('ordonnance')!.value?.id ? editForm.get('ordonnance')!.value : ordonnancesOption
+              "
+              *ngFor="let ordonnancesOption of ordonnancesSharedCollection; trackBy: trackOrdonnancesById"
+            >
+              {{ ordonnancesOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

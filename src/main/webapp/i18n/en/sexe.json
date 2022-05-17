@@ -1,0 +1,10 @@
+{
+  "sds2App": {
+    "Sexe": {
+      "null": "",
+      "MASCULIN": "MASCULIN",
+      "FEMININ": "FEMININ",
+      "AUTRES": "AUTRES"
+    }
+  }
+}

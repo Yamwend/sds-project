@@ -1,0 +1,111 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-hospitalisations-heading"
+        data-cy="HospitalisationsCreateUpdateHeading"
+        jhiTranslate="sds2App.hospitalisations.home.createOrEditLabel"
+      >
+        Create or edit a Hospitalisations
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.hospitalisations.dateArrivee" for="field_dateArrivee">Date Arrivee</label>
+          <div class="d-flex">
+            <input
+              id="field_dateArrivee"
+              data-cy="dateArrivee"
+              type="datetime-local"
+              class="form-control"
+              name="dateArrivee"
+              formControlName="dateArrivee"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.hospitalisations.dateSortie" for="field_dateSortie">Date Sortie</label>
+          <div class="d-flex">
+            <input
+              id="field_dateSortie"
+              data-cy="dateSortie"
+              type="datetime-local"
+              class="form-control"
+              name="dateSortie"
+              formControlName="dateSortie"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="sds2App.hospitalisations.observationsHospitalisation"
+            for="field_observationsHospitalisation"
+            >Observations Hospitalisation</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="observationsHospitalisation"
+            id="field_observationsHospitalisation"
+            data-cy="observationsHospitalisation"
+            formControlName="observationsHospitalisation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.hospitalisations.chambre" for="field_chambre">Chambre</label>
+          <select class="form-control" id="field_chambre" data-cy="chambre" name="chambre" formControlName="chambre">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="chambresOption.id === editForm.get('chambre')!.value?.id ? editForm.get('chambre')!.value : chambresOption"
+              *ngFor="let chambresOption of chambresSharedCollection; trackBy: trackChambresById"
+            >
+              {{ chambresOption.numeroChambre }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sds2App.hospitalisations.patient" for="field_patient">Patient</label>
+          <select class="form-control" id="field_patient" data-cy="patient" name="patient" formControlName="patient">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="patientsOption.id === editForm.get('patient')!.value?.id ? editForm.get('patient')!.value : patientsOption"
+              *ngFor="let patientsOption of patientsSharedCollection; trackBy: trackPatientsById"
+            >
+              {{ patientsOption.codePat }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

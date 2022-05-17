@@ -1,0 +1,10 @@
+{
+  "sds2App": {
+    "Grade": {
+      "null": "",
+      "INFIRMIER": "INFIRMIER",
+      "GENERALISTE": "GENERALISTE",
+      "SPECIALISTE": "SPECIALISTE"
+    }
+  }
+}

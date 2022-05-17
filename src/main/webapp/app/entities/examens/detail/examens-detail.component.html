@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="examens">
+      <h2 data-cy="examensDetailsHeading"><span jhiTranslate="sds2App.examens.detail.title">Examens</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ examens.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.examens.nomExamen">Nom Examen</span></dt>
+        <dd>
+          <span>{{ examens.nomExamen }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.examens.typeExamen">Type Examen</span></dt>
+        <dd>
+          <span>{{ examens.typeExamen }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.examens.dateExamen">Date Examen</span></dt>
+        <dd>
+          <span>{{ examens.dateExamen | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.examens.typeExam">Type Exam</span></dt>
+        <dd>
+          <div *ngIf="examens.typeExam">
+            <a [routerLink]="['/type-exams', examens.typeExam?.id, 'view']">{{ examens.typeExam?.libelleType }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="sds2App.examens.laboratoire">Laboratoire</span></dt>
+        <dd>
+          <div *ngIf="examens.laboratoire">
+            <a [routerLink]="['/laboratoires', examens.laboratoire?.id, 'view']">{{ examens.laboratoire?.nomLaboratoire }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/examens', examens.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

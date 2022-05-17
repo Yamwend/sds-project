@@ -1,0 +1,100 @@
+<div>
+  <h2 id="page-heading" data-cy="PersonnelSoignantsHeading">
+    <span jhiTranslate="sds2App.personnelSoignants.home.title">Personnel Soignants</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="sds2App.personnelSoignants.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-personnel-soignants"
+        [routerLink]="['/personnel-soignants/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="sds2App.personnelSoignants.home.createLabel"> Create a new Personnel Soignants </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="personnelSoignants?.length === 0">
+    <span jhiTranslate="sds2App.personnelSoignants.home.notFound">No personnelSoignants found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="personnelSoignants && personnelSoignants.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.codePersonne">Code Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.nomPersonne">Nom Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.prenomPersonne">Prenom Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.gradePersonne">Grade Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.fonctionPersonne">Fonction Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.telphonePersonne">Telphone Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.emailPersonne">Email Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.adressePersonne">Adresse Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.dateDeNaissPersonne">Date De Naiss Personne</span></th>
+          <th scope="col"><span jhiTranslate="sds2App.personnelSoignants.service">Service</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let personnelSoignants of personnelSoignants; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/personnel-soignants', personnelSoignants.id, 'view']">{{ personnelSoignants.id }}</a>
+          </td>
+          <td>{{ personnelSoignants.codePersonne }}</td>
+          <td>{{ personnelSoignants.nomPersonne }}</td>
+          <td>{{ personnelSoignants.prenomPersonne }}</td>
+          <td jhiTranslate="{{ 'sds2App.Grade.' + personnelSoignants.gradePersonne }}">{{ personnelSoignants.gradePersonne }}</td>
+          <td>{{ personnelSoignants.fonctionPersonne }}</td>
+          <td>{{ personnelSoignants.telphonePersonne }}</td>
+          <td jhiTranslate="{{ 'sds2App.Sexe.' + personnelSoignants.emailPersonne }}">{{ personnelSoignants.emailPersonne }}</td>
+          <td>{{ personnelSoignants.adressePersonne }}</td>
+          <td>{{ personnelSoignants.dateDeNaissPersonne | formatMediumDatetime }}</td>
+          <td>
+            <div *ngIf="personnelSoignants.service">
+              <a [routerLink]="['/services', personnelSoignants.service?.id, 'view']">{{ personnelSoignants.service?.libelleService }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/personnel-soignants', personnelSoignants.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/personnel-soignants', personnelSoignants.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(personnelSoignants)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

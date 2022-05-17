@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="consultations">
+      <h2 data-cy="consultationsDetailsHeading"><span jhiTranslate="sds2App.consultations.detail.title">Consultations</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ consultations.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.consultations.typeConsultation">Type Consultation</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'sds2App.TypeConsultation.' + consultations.typeConsultation }}">{{
+            consultations.typeConsultation
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.consultations.observationsConsltation">Observations Consltation</span></dt>
+        <dd>
+          <span>{{ consultations.observationsConsltation }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.consultations.fraisConsultion">Frais Consultion</span></dt>
+        <dd>
+          <span>{{ consultations.fraisConsultion }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.consultations.dateConsultion">Date Consultion</span></dt>
+        <dd>
+          <span>{{ consultations.dateConsultion | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sds2App.consultations.patient">Patient</span></dt>
+        <dd>
+          <div *ngIf="consultations.patient">
+            <a [routerLink]="['/patients', consultations.patient?.id, 'view']">{{ consultations.patient?.codePat }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="sds2App.consultations.personnel">Personnel</span></dt>
+        <dd>
+          <div *ngIf="consultations.personnel">
+            <a [routerLink]="['/personnel-soignants', consultations.personnel?.id, 'view']">{{ consultations.personnel?.codePersonne }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="sds2App.consultations.examen">Examen</span></dt>
+        <dd>
+          <div *ngIf="consultations.examen">
+            <a [routerLink]="['/examens', consultations.examen?.id, 'view']">{{ consultations.examen?.nomExamen }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/consultations', consultations.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

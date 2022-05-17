@@ -1,0 +1,26 @@
+{
+  "sds2App": {
+    "typeExams": {
+      "home": {
+        "title": "TypeExams",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Type Exams",
+        "createOrEditLabel": "Créer ou éditer un Type Exams",
+        "notFound": "Aucun Type Exams trouvé"
+      },
+      "created": "Un nouveau Type Exams a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type Exams avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type Exams avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Type Exams {{ id }} ?"
+      },
+      "detail": {
+        "title": "Type Exams"
+      },
+      "id": "ID",
+      "libelleType": "Libelle Type",
+      "descruptionType": "Descruption Type",
+      "type": "Type"
+    }
+  }
+}

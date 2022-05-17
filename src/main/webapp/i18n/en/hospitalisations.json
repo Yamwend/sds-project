@@ -1,0 +1,28 @@
+{
+  "sds2App": {
+    "hospitalisations": {
+      "home": {
+        "title": "Hospitalisations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hospitalisations",
+        "createOrEditLabel": "Create or edit a Hospitalisations",
+        "notFound": "No Hospitalisations found"
+      },
+      "created": "A new Hospitalisations is created with identifier {{ param }}",
+      "updated": "A Hospitalisations is updated with identifier {{ param }}",
+      "deleted": "A Hospitalisations is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hospitalisations {{ id }}?"
+      },
+      "detail": {
+        "title": "Hospitalisations"
+      },
+      "id": "ID",
+      "dateArrivee": "Date Arrivee",
+      "dateSortie": "Date Sortie",
+      "observationsHospitalisation": "Observations Hospitalisation",
+      "chambre": "Chambre",
+      "patient": "Patient"
+    }
+  }
+}

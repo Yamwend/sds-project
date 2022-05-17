@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100513",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "ordonnances",
+  "fields": [
+    {
+      "fieldName": "numero",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Ordonnances",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ligneOrdonnances",
+      "otherEntityRelationshipName": "ordonnance",
+      "relationshipName": "ligne",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "traitements",
+      "otherEntityRelationshipName": "ordonnance",
+      "relationshipName": "ordonner",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Hospitalisations.
+    -->
+    <changeSet id="20220517100522-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="chambre_id"
+                                 baseTableName="hospitalisations"
+                                 constraintName="fk_hospitalisations__chambre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="chambres"/>
+
+        <addForeignKeyConstraint baseColumnNames="patient_id"
+                                 baseTableName="hospitalisations"
+                                 constraintName="fk_hospitalisations__patient_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="patients"/>
+    </changeSet>
+</databaseChangeLog>

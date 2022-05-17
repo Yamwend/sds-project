@@ -1,0 +1,76 @@
+{
+  "applications": "*",
+  "changelogDate": "20220517100510",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "patients",
+  "fields": [
+    {
+      "fieldName": "codePat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomPat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenomPat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sexePat",
+      "fieldType": "Sexe",
+      "fieldValues": "MASCULIN,FEMININ,AUTRES"
+    },
+    {
+      "fieldName": "adressePat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephonePat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailPat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "originePat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "professionPat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "agePat",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Patients",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "traitements",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "traitement",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "hospitalisations",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "hospitalisation",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "consultations",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "consultation",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}
