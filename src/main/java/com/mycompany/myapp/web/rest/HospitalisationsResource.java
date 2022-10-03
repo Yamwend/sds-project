@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -154,6 +155,16 @@ public class HospitalisationsResource {
     public List<Hospitalisations> getAllHospitalisations(@RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get all Hospitalisations");
         return hospitalisationsRepository.findAllWithEagerRelationships();
+    }
+
+    @GetMapping("/hospitalisations/ByPatienId")
+    public List<Hospitalisations> getAllHospitalisationsByPatient(@RequestParam(required = true) Long patientId) {
+        log.debug("REST request to get all Hospitalisations");
+        return hospitalisationsRepository
+            .findAll()
+            .stream()
+            .filter(h -> h.getPatient().getId().equals(patientId))
+            .collect(Collectors.toList());
     }
 
     /**

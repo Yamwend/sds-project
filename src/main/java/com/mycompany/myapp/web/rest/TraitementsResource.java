@@ -8,6 +8,8 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import liquibase.pro.packaged.id;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -156,6 +158,15 @@ public class TraitementsResource {
     public List<Traitements> getAllTraitements(@RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get all Traitements");
         return traitementsRepository.findAllWithEagerRelationships();
+    }
+
+    @GetMapping("/traitements/ByPatientId")
+    public List<Traitements> getAllTraitementsByPatient(@RequestParam(required = true) Long patientId) {
+        System.out.print(patientId);
+        System.out.print("\n");
+        log.debug("REST request to get all Traitements of patient xx");
+        return traitementsRepository.findAll().stream().filter(t -> t.getPatient().getId().equals(patientId)).collect(Collectors.toList());
+        // .stream().filter(traitement -> traitement.getPatient().getId().equals(id)).collect(Collectors.toList());
     }
 
     /**

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "traitements": "1"
+  },
+  "response": [
+    [
+      {
+        "id": 1,
+        "observationsTraitement": "contingency Gorgeous Granite",
+        "debutTraitement": "2022-05-17T04:49:00Z",
+        "finTraitement": "2022-05-16T19:02:00Z",
+        "etatFinPatient": "Chine Pizza Plastic",
+        "patient": {
+          "id": 1,
+          "codePat": "platforms Djibouti",
+          "nomPat": "Hat Intelligent framework",
+          "prenomPat": "Avon Dahomey Loan",
+          "sexePat": "FEMININ",
+          "adressePat": "Chypre",
+          "telephonePat": "compelling",
+          "emailPat": "innovate Superviseur",
+          "originePat": "Beauty Chips",
+          "professionPat": "3rd Soft Avon",
+          "agePat": "2022-05-17T09:51:36Z"
+        },
+        "maladie": {
+          "id": 2,
+          "nomMaladie": "convergence Sharable",
+          "familleMaladie": "navigate Bretagne",
+          "descriptionMaladie": "payment exploit"
+        },
+        "ordonnance": {
+          "id": 3,
+          "numero": "Borders withdrawal user"
+        },
+        "personnel": {
+          "id": 7,
+          "codePersonne": "HDD",
+          "nomPersonne": "Developpeur open-source Singapore",
+          "prenomPersonne": "Agent",
+          "gradePersonne": "GENERALISTE",
+          "fonctionPersonne": "Picardie indexing",
+          "telphonePersonne": "neural metrics",
+          "emailPersonne": "AUTRES",
+          "adressePersonne": "Île-de-France cultivate Handmade",
+          "dateDeNaissPersonne": "2022-05-16T12:23:15Z"
+        }
+      },
+      {
+        "id": 2,
+        "observationsTraitement": "contingency Gorgeous Granite",
+        "debutTraitement": "2022-05-17T04:49:00Z",
+        "finTraitement": "2022-05-16T19:02:00Z",
+        "etatFinPatient": "Chine Pizza Plastic",
+        "patient": {
+          "id": 1,
+          "codePat": "platforms Djibouti",
+          "nomPat": "Hat Intelligent framework",
+          "prenomPat": "Avon Dahomey Loan",
+          "sexePat": "FEMININ",
+          "adressePat": "Chypre",
+          "telephonePat": "compelling",
+          "emailPat": "innovate Superviseur",
+          "originePat": "Beauty Chips",
+          "professionPat": "3rd Soft Avon",
+          "agePat": "2022-05-17T09:51:36Z"
+        },
+        "maladie": {
+          "id": 2,
+          "nomMaladie": "convergence Sharable",
+          "familleMaladie": "navigate Bretagne",
+          "descriptionMaladie": "payment exploit"
+        },
+        "ordonnance": {
+          "id": 3,
+          "numero": "Borders withdrawal user"
+        },
+        "personnel": {
+          "id": 7,
+          "codePersonne": "HDD",
+          "nomPersonne": "Developpeur open-source Singapore",
+          "prenomPersonne": "Agent",
+          "gradePersonne": "GENERALISTE",
+          "fonctionPersonne": "Picardie indexing",
+          "telphonePersonne": "neural metrics",
+          "emailPersonne": "AUTRES",
+          "adressePersonne": "Île-de-France cultivate Handmade",
+          "dateDeNaissPersonne": "2022-05-16T12:23:15Z"
+        }
+      }
+    ]
+  ]
+}
